@@ -8,19 +8,19 @@ import {
   searchCategories,
 } from "@/lib/wordpress";
 
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
+// import {
+//   Pagination,
+//   PaginationContent,
+//   PaginationItem,
+//   PaginationLink,
+//   PaginationNext,
+//   PaginationPrevious,
+// } from "@/components/ui/pagination";
 
-import { Section, Container, Prose } from "@/components/craft";
-import { PostCard } from "@/components/posts/post-card";
-import { FilterPosts } from "@/components/posts/filter";
-import { SearchInput } from "@/components/posts/search-input";
+// import { Section, Container, Prose } from "@/components/craft";
+// import { PostCard } from "@/components/posts/post-card";
+// import { FilterPosts } from "@/components/posts/filter";
+// import { SearchInput } from "@/components/posts/search-input";
 
 import type { Metadata } from "next";
 
@@ -45,6 +45,7 @@ export default async function Page({
 }) {
   const params = await searchParams;
   const { author, tag, category, page: pageParam, search } = params;
+  console.log("Received search parameters:", params);
 
   // Handle pagination
   const page = pageParam ? parseInt(pageParam, 10) : 1;
@@ -59,6 +60,7 @@ export default async function Page({
   ]);
 
   const { data: posts, headers } = postsResponse;
+  console.log(posts)
   const { total, totalPages } = headers;
 
   // Create pagination URL helper
@@ -73,19 +75,18 @@ export default async function Page({
   };
 
   return (
-    <Section>
-      <Container>
+    // <></>
         <div className="space-y-8">
-          <Prose>
+          {/* <Prose> */}
             <h2>All Posts</h2>
             <p className="text-muted-foreground">
               {total} {total === 1 ? "post" : "posts"} found
               {search && " matching your search"}
             </p>
-          </Prose>
+          {/* </Prose> */}
 
           <div className="space-y-4">
-            <SearchInput defaultValue={search} />
+            {/* <SearchInput defaultValue={search} />
 
             <FilterPosts
               authors={authors}
@@ -94,13 +95,14 @@ export default async function Page({
               selectedAuthor={author}
               selectedTag={tag}
               selectedCategory={category}
-            />
+            /> */}
           </div>
 
           {posts.length > 0 ? (
             <div className="grid md:grid-cols-3 gap-4">
               {posts.map((post) => (
-                <PostCard key={post.id} post={post} />
+                <p key={post.id}>{post.title.rendered}</p>
+                // <PostCard key={post.id} post={post} />
               ))}
             </div>
           ) : (
@@ -111,7 +113,7 @@ export default async function Page({
 
           {totalPages > 1 && (
             <div className="flex justify-center items-center py-8">
-              <Pagination>
+              {/* <Pagination>
                 <PaginationContent>
                   {page > 1 && (
                     <PaginationItem>
@@ -154,11 +156,11 @@ export default async function Page({
                     </PaginationItem>
                   )}
                 </PaginationContent>
-              </Pagination>
+              </Pagination> */}
             </div>
           )}
         </div>
-      </Container>
-    </Section>
+    //   </Container>
+    // </Section>
   );
 }

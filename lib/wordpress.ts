@@ -5,6 +5,8 @@
 import querystring from "query-string";
 import type {
   Post,
+  Service,
+  Work,
   Category,
   Tag,
   Page,
@@ -228,6 +230,25 @@ export async function getPostBySlug(slug: string): Promise<Post | undefined> {
     { slug, _embed: true }
   );
   return posts[0];
+}
+
+// get services and works (custom post types)
+export async function getServices(): Promise<Service[]> {
+  return wordpressFetchGraceful<Service[]>(
+    "/wp-json/wp/v2/services",
+    [],
+    { per_page: 100, _embed: true },
+    ["wordpress", "services"]
+  );
+}
+
+export async function getWorks(): Promise<Work[]> {
+  return wordpressFetchGraceful<Work[]>(
+    "/wp-json/wp/v2/works",
+    [],
+    { per_page: 100, _embed: true },
+    ["wordpress", "works"]
+  );
 }
 
 export async function getAllCategories(): Promise<Category[]> {

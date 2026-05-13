@@ -79,6 +79,30 @@ export interface Post extends WPEntity {
   _embedded?: PostEmbedded;
 }
 
+// Services
+export interface Service extends WPEntity {
+  title: RenderedTitle;
+  content: RenderedContent;
+  excerpt: RenderedContent;
+  meta: {
+    dmb_icon: string;
+    dmb_tags: string[];
+  };
+}
+
+// Work/Projects
+export interface Work extends WPEntity {
+  title: RenderedTitle;
+  content: RenderedContent;
+  excerpt: RenderedContent;
+  meta: {
+    dmb_type: string;
+    dmb_year: string;
+    dmb_color: string;
+    dmb_accent: string;
+  };
+}
+
 export interface Page extends WPEntity {
   title: RenderedTitle;
   content: RenderedContent;

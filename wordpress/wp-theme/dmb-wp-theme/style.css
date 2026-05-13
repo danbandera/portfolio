@@ -1,0 +1,10 @@
+/*
+Theme Name:  DMB Headless Theme
+Theme URI:   https://danmtzbandera.com
+Author:      Daniel Martinez Bandera
+Description: Minimal headless theme. Registers custom post types for Services and Work, exposed via the WP REST API for the Next.js frontend.
+Version:     1.0.0
+License:     GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: dmb-theme
+*/
