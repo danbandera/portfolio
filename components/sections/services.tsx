@@ -68,7 +68,7 @@ export default function Services({ services }: { services: any[] }) {
                 />
                 {s.meta.dmb_tags && (
                   <div className="service-tags">
-                    {s.meta.dmb_tags.map((t) => <span key={t} className="tag">{t}</span>)}
+                    {s.meta.dmb_tags.map((t: string) => <span key={t} className="tag">{t}</span>)}
                   </div>
                 )}
               </motion.div>
