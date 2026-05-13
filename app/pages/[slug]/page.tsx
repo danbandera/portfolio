@@ -1,6 +1,6 @@
 import { getPageBySlug, getAllPages } from "@/lib/wordpress";
 import { generateContentMetadata, stripHtml } from "@/lib/metadata";
-import { Section, Container, Prose } from "@/components/craft";
+// import { Section, Container, Prose } from "@/components/craft";
 import { notFound } from "next/navigation";
 
 import type { Metadata } from "next";
@@ -53,13 +53,6 @@ export default async function Page({
   }
 
   return (
-    <Section>
-      <Container>
-        <Prose>
-          <h2>{page.title.rendered}</h2>
-          <div dangerouslySetInnerHTML={{ __html: page.content.rendered }} />
-        </Prose>
-      </Container>
-    </Section>
+    <></>
   );
 }

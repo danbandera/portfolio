@@ -1,5 +1,5 @@
 import { getAllTags } from "@/lib/wordpress";
-import { ArchiveList } from "@/components/archive-list";
+// import { ArchiveList } from "@/components/archive-list";
 import type { Tag } from "@/lib/wordpress.d";
 import type { Metadata } from "next";
 
@@ -17,12 +17,6 @@ export default async function Page() {
   const tags = await getAllTags();
 
   return (
-    <ArchiveList<Tag>
-      title="All Tags"
-      items={tags}
-      getItemHref={(t) => `/posts/?tag=${t.id}`}
-      getItemLabel={(t) => t.name}
-      emptyMessage="No tags available yet."
-    />
+    <></>
   );
 }
