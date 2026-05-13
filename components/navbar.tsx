@@ -28,7 +28,7 @@ export default function Navbar() {
       transition={{ duration: 0.8, delay: 0.2 }}
     >
       <div className="nav-inner">
-        <a href="#" className="nav-logo">
+        <a href="/" className="nav-logo">
           <span className="logo-mark">DMB</span>
           <span className="logo-text">Daniel Martinez Bandera</span>
         </a>

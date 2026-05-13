@@ -22,12 +22,12 @@ export default function Hero() {
       <motion.div className="hero-blob blob-1" style={{ y: blobY1 }} />
       <motion.div className="hero-blob blob-2" style={{ y: blobY2 }} />
       <motion.div className="hero-content" style={{ opacity: contentOpacity }}>
-        <FadeIn delay={0.3}>
+        {/* <FadeIn delay={0.3}>
           <div className="hero-badge">
             <span className="badge-dot" />
             <span>Available for new projects</span>
           </div>
-        </FadeIn>
+        </FadeIn> */}
         <FadeIn delay={0.5}>
           <h1 className="hero-title">
             <span className="title-line">WordPress</span>
