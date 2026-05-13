@@ -1,0 +1,15 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        WORDPRESS_URL: ${WORDPRESS_URL}
+        WORDPRESS_HOSTNAME: ${WORDPRESS_HOSTNAME}
+        WORDPRESS_WEBHOOK_SECRET: ${WORDPRESS_WEBHOOK_SECRET}
+    ports:
+      - "3000:3000"
+    environment:
+      WORDPRESS_URL: ${WORDPRESS_URL}
+      WORDPRESS_HOSTNAME: ${WORDPRESS_HOSTNAME}
+      WORDPRESS_WEBHOOK_SECRET: ${WORDPRESS_WEBHOOK_SECRET}
+    restart: unless-stopped
